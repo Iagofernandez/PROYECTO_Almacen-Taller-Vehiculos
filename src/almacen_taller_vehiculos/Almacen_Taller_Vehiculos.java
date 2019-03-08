@@ -1,18 +1,19 @@
 package almacen_taller_vehiculos;
 
+import Menu.Menu;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author luis-
  */
-public class Almacen_Taller_Vehiculos {
+public class Almacen_Taller_Vehiculos extends Menu{
     
     public static void main(String[] args) {
         
         Menu objMenu = new Menu();
         
-        objMenu.menuUsuario(Menu.Personas.CLIENTES);
+        objMenu.accederMenu(Menu.Personas.CLIENTES);
         
     }
     

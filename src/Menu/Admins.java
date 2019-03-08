@@ -1,7 +1,6 @@
-package Personas;
+package Menu;
 
 import java.util.*;
-import almacen_taller_vehiculos.Menu;
 
 /**
  *
@@ -15,6 +14,14 @@ public class Admins {
     //Se inicializa al principio del programa automáticamente
     //no sirve de nada ponerlo en protected???
     //accedemos a los arrayList con static
-    private ArrayList<Admins> listaAdmins = new ArrayList<Admins>();
+    protected static ArrayList<Admins> listaAdmins = new ArrayList<Admins>();
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
 }

@@ -15,5 +15,17 @@ public class ACoches {
     private int unidades;
 
     ArrayList<ACoches> listaCoches = new ArrayList<ACoches>();
+    
+    
+    public void llenarAlmacen(){
+        
+        //leer fichero y llenarlo con los datos ya puestos??
+        //lo mismo con todos los vehiculos
+        //si se añaden mas, se tendra que escribir también en el fichero
+        
+        
+    }
+    
+    
 
 }
