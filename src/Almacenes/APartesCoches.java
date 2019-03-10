@@ -1,68 +1,62 @@
 package Almacenes;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author luis-
  */
 public class APartesCoches {
 
-    private String suspension;
-    private int Ususpension;
-    private String frenos;
-    private int Ufrenos;
-    private String volante;
-    private int Uvolante;
-    private String asientos;
-    private int Uasientos;
-    private String escape;
-    private int Uescape;
-    private String liquidoFrenos;
-    private int UliquidoFrenos;
-    private String luces;
-    private int Uluces;
-    private String motor;
-    private int Umotor;
-    private String luna;
-    private int Uluna;
-    private String capo;
-    private int Ucapo;
-    private String neumaticos;
-    private int Uneumaticos;
-    private String llantas;
-    private int Ullantas;
-    private String retrovisores;
-    private int Uretrovisores;
+    //cambiar nombre clase?
+    private String nombreParte;
+    private int unidadesParte;
+    private float precioParte;
 
-    //builder sin obligatorios?? introducir en un array lo que se quiere 
-    //unidades de cada parte? cada vez que se usa el constructor (del builder) se restan unidades
-    //objeto pedido
-    public APartesCoches(String suspension, final int Ususpension, String frenos, final int Ufrenos, String volante, final int Uvolante, String asientos, final int Uasientos, String escape, final int Uescape, String liquidoFrenos, final int UliquidoFrenos, String luces, final int Uluces, String motor, final int Umotor, String luna, final int Uluna, String capo, final int Ucapo, String neumaticos, final int Uneumaticos, String llantas, final int Ullantas, String retrovisores, final int Uretrovisores) {
-        this.suspension = suspension;
-        this.Ususpension = Ususpension;
-        this.frenos = frenos;
-        this.Ufrenos = Ufrenos;
-        this.volante = volante;
-        this.Uvolante = Uvolante;
-        this.asientos = asientos;
-        this.Uasientos = Uasientos;
-        this.escape = escape;
-        this.Uescape = Uescape;
-        this.liquidoFrenos = liquidoFrenos;
-        this.UliquidoFrenos = UliquidoFrenos;
-        this.luces = luces;
-        this.Uluces = Uluces;
-        this.motor = motor;
-        this.Umotor = Umotor;
-        this.luna = luna;
-        this.Uluna = Uluna;
-        this.capo = capo;
-        this.Ucapo = Ucapo;
-        this.neumaticos = neumaticos;
-        this.Uneumaticos = Uneumaticos;
-        this.llantas = llantas;
-        this.Ullantas = Ullantas;
-        this.retrovisores = retrovisores;
-        this.Uretrovisores = Uretrovisores;
+    public static ArrayList<APartesCoches> listaPartesC = new ArrayList<APartesCoches>();
+
+    public APartesCoches() {
+    }
+
+    public APartesCoches(String nombreParte, int unidadesParte, float precioParte) {
+        this.nombreParte = nombreParte;
+        this.unidadesParte = unidadesParte;
+        this.precioParte = precioParte;
+    }
+
+    public void llenarAlmacenPartesC() {
+        //cambiar unidades al acabar
+        listaPartesC.add(new APartesCoches("liquidoFrenos", 2, 5.75f));
+        listaPartesC.add(new APartesCoches("cinturones", 2, 4f));
+        listaPartesC.add(new APartesCoches("llantas", 2, 15f));
+        listaPartesC.add(new APartesCoches("neumaticos", 2, 17.5f));
+        listaPartesC.add(new APartesCoches("radios", 2, 23f));
+        listaPartesC.add(new APartesCoches("altavoces", 2, 30f));
+
+    }
+
+    public String getNombreParte() {
+        return nombreParte;
+    }
+
+    public int getUnidadesParte() {
+        return unidadesParte;
+    }
+
+    public float getPrecioParte() {
+        return precioParte;
+    }
+
+    public void setNombreParte(String nombreParte) {
+        this.nombreParte = nombreParte;
+    }
+
+    public void setUnidadesParte(int unidadesParte) {
+        this.unidadesParte = unidadesParte;
+    }
+
+    public void setPrecioParte(float precioParte) {
+        this.precioParte = precioParte;
     }
 
 }
