@@ -65,7 +65,7 @@ public class AMotos {
 
     @Override
     public String toString() {
-        return "AMotos{" + "matricula=" + matricula + ", modelo=" + modelo + ", color=" + color + ", precio=" + precio + ", unidades=" + unidades + '}';
+        return  modelo + " |COLOR: " + color + "| PRECIO: " + precio + "| UNIDADES: " + unidades + "|\n";
     }
 
 }

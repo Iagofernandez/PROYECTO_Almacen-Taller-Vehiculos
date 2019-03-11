@@ -6,7 +6,7 @@ import java.util.*;
  *
  * @author luis-
  */
-public class Clientes  {
+public class Clientes {
 
     private String nombre;
     private String dni;
