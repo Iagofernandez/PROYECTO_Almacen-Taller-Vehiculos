@@ -3,7 +3,7 @@ package Menu;
 import javax.swing.JOptionPane;
 import Almacenes.*;
 import utilities.PedirDatos;
-import Escritura.EscribirFactura;
+import Escritura.Escribir;
 
 /**
  *
@@ -74,7 +74,7 @@ public class MenuCliente {
 
                                                 String nombreFichPC = PedirDatos.string("Introduce tu nombre");
 
-                                                EscribirFactura.pedido(parte, unidad, direccion, telf, precioTotal, nombreFichPC);
+                                                Escribir.pedido(parte, unidad, direccion, telf, precioTotal, nombreFichPC);
 
                                                 JOptionPane.showMessageDialog(null, "Gracias por su compra");
                                                 break;
@@ -124,7 +124,7 @@ public class MenuCliente {
 
                                                 String nombreFichPM = PedirDatos.string("Introduce tu nombre");
 
-                                                EscribirFactura.pedido(parte2, unidad2, direccion2, telf2, precioTotal2, nombreFichPM);
+                                                Escribir.pedido(parte2, unidad2, direccion2, telf2, precioTotal2, nombreFichPM);
 
                                                 JOptionPane.showMessageDialog(null, "Gracias por su compra");
                                                 break;
@@ -185,7 +185,7 @@ public class MenuCliente {
 
                                                 String nombreFichC = PedirDatos.string("Introduce tu nombre");
 
-                                                EscribirFactura.pedido(modelo, 1, direccion3, telf3, precioTotal3, nombreFichC);
+                                                Escribir.pedido(modelo, 1, direccion3, telf3, precioTotal3, nombreFichC);
 
                                                 JOptionPane.showMessageDialog(null, "Gracias por su compra");
                                                 break;
@@ -233,7 +233,7 @@ public class MenuCliente {
 
                                                 String nombreFichM = PedirDatos.string("Introduce tu nombre");
 
-                                                EscribirFactura.pedido(modelo2, 1, direccion4, telf4, precioTotal4, nombreFichM);
+                                                Escribir.pedido(modelo2, 1, direccion4, telf4, precioTotal4, nombreFichM);
 
                                                 JOptionPane.showMessageDialog(null, "Gracias por su compra");
                                                 break;

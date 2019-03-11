@@ -6,7 +6,7 @@ import java.io.*;
  *
  * @author lvaqueiroperez
  */
-public class EscribirFactura {
+public class Escribir {
 
     public static void pedido(String nombreProducto, int unidades, String direccion, String telf, float precio, String nombreFich) {
 
