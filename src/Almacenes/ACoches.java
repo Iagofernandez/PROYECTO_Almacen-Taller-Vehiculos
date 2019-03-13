@@ -64,7 +64,7 @@ public class ACoches {
 
     @Override
     public String toString() {
-        return modelo + " |COLOR: " + color + "| PRECIO: " + precio + "| UNIDADES: " + unidades + "|\n";
+        return "\n"+modelo + " | COLOR: " + color + "| PRECIO: " + precio + "| UNIDADES: " + unidades + "|\n";
     }
 
 }
