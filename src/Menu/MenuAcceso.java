@@ -19,7 +19,10 @@ public class MenuAcceso {
     }
 
     public void accederMenu(Personas user) {
+        
+        Clientes.llenarClientes();
         JOptionPane.showMessageDialog(null, "BIENVENIDO");
+        
         if (user == Personas.CLIENTES) {
 
             String nombreClient;
@@ -28,6 +31,7 @@ public class MenuAcceso {
             dniClient = PedirDatos.string("Por favor, introduzca su dni");
 
             if (Clientes.listaClientes.isEmpty()) {
+                
                 nombreClient = PedirDatos.string("Introduzca su nombre");
 
                 Clientes.listaClientes.add(new Clientes(nombreClient, dniClient));
@@ -77,6 +81,7 @@ public class MenuAcceso {
 
             String nombre = PedirDatos.string("Introduzca su nombre:");
             String pass = PedirDatos.string("Introduzca su password");
+            
             int marca = 0;
 
             Iterator it = Admins.listaAdmins.iterator();
@@ -86,6 +91,7 @@ public class MenuAcceso {
                 Admins adm = (Admins) it.next();
 
                 if (adm.getNombre().equals(nombre) && adm.getPassword().equals(pass)) {
+                    
                     marca = 1;
                     JOptionPane.showMessageDialog(null, "Acceso concedido");
 

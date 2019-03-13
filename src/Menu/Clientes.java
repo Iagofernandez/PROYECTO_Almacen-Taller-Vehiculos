@@ -16,6 +16,12 @@ public class Clientes {
     //accedemos a los ArrayList con static
     protected static ArrayList<Clientes> listaClientes = new ArrayList<Clientes>();
 
+    public static void llenarClientes() {
+
+        listaClientes.add(new Clientes("Rodolfo", "5555Y"));
+
+    }
+
     public Clientes(String nombre, String dni) {
         this.nombre = nombre;
         this.dni = dni;
