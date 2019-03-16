@@ -1,5 +1,9 @@
 package Menu;
 
+import Almacenes.ACoches;
+import Almacenes.AMotos;
+import Almacenes.APartesCoches;
+import Almacenes.APartesMotos;
 import javax.swing.JOptionPane;
 import java.util.Iterator;
 import utilities.PedirDatos;
@@ -19,10 +23,20 @@ public class MenuAcceso {
     }
 
     public void accederMenu(Personas user) {
-        
+
         Clientes.llenarClientes();
+        Admins.llenarAdmins();
+        ACoches.llenarAlmacenC();
+        ACoches.escribirFich();
+        AMotos.llenarAlmacenM();
+        AMotos.escribirFich();
+        APartesCoches.llenarAlmacenPartesC();
+        APartesCoches.escribirFich();
+        APartesMotos.llenarAlmacenPartesM();
+        APartesMotos.escribirFich();
+
         JOptionPane.showMessageDialog(null, "BIENVENIDO");
-        
+
         if (user == Personas.CLIENTES) {
 
             String nombreClient;
@@ -31,14 +45,14 @@ public class MenuAcceso {
             dniClient = PedirDatos.string("Por favor, introduzca su dni");
 
             if (Clientes.listaClientes.isEmpty()) {
-                
+
                 nombreClient = PedirDatos.string("Introduzca su nombre");
 
                 Clientes.listaClientes.add(new Clientes(nombreClient, dniClient));
 
                 //acceso al menu como cliente nuevo en lista vacía
                 MenuCliente.menuCliente();
-                
+
             } else {
 
                 int marca = 0;
@@ -54,10 +68,10 @@ public class MenuAcceso {
                         marca = 1;
 
                         JOptionPane.showMessageDialog(null, "Hola de nuevo, " + client.getNombre());
-                        
+
                         MenuCliente.menuCliente();
-                       
-                        break; 
+
+                        break;
                     }
 
                 }
@@ -69,7 +83,6 @@ public class MenuAcceso {
                     Clientes.listaClientes.add(new Clientes(nombreClient, dniClient));
 
                     //acceso al menu como cliente nuevo
-                    
                     MenuCliente.menuCliente();
                 }
 
@@ -77,35 +90,49 @@ public class MenuAcceso {
             //hacer aquí un do while por intentos???
         } else if (user == Personas.ADMINS) {
 
-            JOptionPane.showMessageDialog(null, "Modo Administrador");
+            int intentos = 0;
 
-            String nombre = PedirDatos.string("Introduzca su nombre:");
-            String pass = PedirDatos.string("Introduzca su password");
-            
-            int marca = 0;
+            do {
 
-            Iterator it = Admins.listaAdmins.iterator();
+                JOptionPane.showMessageDialog(null, "Modo Administrador");
 
-            while (it.hasNext()) {
+                String nombre = PedirDatos.string("Introduzca su nombre:");
+                String pass = PedirDatos.string("Introduzca su password");
 
-                Admins adm = (Admins) it.next();
+                int marca = 0;
 
-                if (adm.getNombre().equals(nombre) && adm.getPassword().equals(pass)) {
-                    
-                    marca = 1;
-                    JOptionPane.showMessageDialog(null, "Acceso concedido");
+                Iterator it = Admins.listaAdmins.iterator();
 
-                    //acceso al menu de administradores
-                    //salir con break o system out
-                    break;
+                while (it.hasNext()) {
+
+                    Admins adm = (Admins) it.next();
+
+                    if (adm.getNombre().equals(nombre) && adm.getPassword().equals(pass)) {
+
+                        marca = 1;
+                        JOptionPane.showMessageDialog(null, "Acceso concedido");
+
+                        //acceso al menu de administradores
+                        //salir con break o con exit
+                        MenuAdmin.menuAdmins();
+
+                    }
+
+                }
+                if (marca == 0) {
+
+                    JOptionPane.showMessageDialog(null, "Nombre o Password incorrectos");
+                    intentos++;
                 }
 
-            }
-            if (marca == 0) {
+                if (intentos > 3) {
 
-                JOptionPane.showMessageDialog(null, "Nombre o Password incorrectos");
+                    JOptionPane.showMessageDialog(null, "NÚMERO DE INTENTOS AGOTADO");
+                    System.exit(0);
 
-            }
+                }
+
+            } while (intentos <= 3);
 
         }
 

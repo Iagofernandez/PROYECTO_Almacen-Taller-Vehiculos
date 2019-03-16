@@ -1,6 +1,7 @@
 package Almacenes;
 
 import java.util.ArrayList;
+import Escritura_Lectura.*;
 
 /**
  *
@@ -24,14 +25,21 @@ public class APartesMotos {
         this.precioParte = precioParte;
     }
 
-    public void llenarAlmacenPartesM() {
+    //leer al principio y escribir al final
+    public static void llenarAlmacenPartesM() {
         //cambiar unidades al acabar
         listaPartesM.add(new APartesMotos("liquidoFrenos", 2, 5.75f));
         listaPartesM.add(new APartesMotos("cascos", 2, 12f));
         listaPartesM.add(new APartesMotos("llantas", 2, 15f));
         listaPartesM.add(new APartesMotos("neumaticos", 2, 17.5f));
         listaPartesM.add(new APartesMotos("guantes", 2, 15f));
-        listaPartesM.add(new APartesMotos("punhos", 2, 30f));
+        listaPartesM.add(new APartesMotos("puños", 2, 30f));
+
+    }
+
+    public static void escribirFich() {
+
+        Escribir.fichPartesMotos(listaPartesM);
 
     }
 

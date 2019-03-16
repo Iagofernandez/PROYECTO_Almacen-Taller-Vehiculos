@@ -1,6 +1,7 @@
 package Almacenes;
 
 import java.util.ArrayList;
+import Escritura_Lectura.*;
 
 /**
  *
@@ -24,14 +25,22 @@ public class APartesCoches {
         this.precioParte = precioParte;
     }
 
-    public void llenarAlmacenPartesC() {
-        //cambiar unidades al acabar
+    //lenar/actualizar lista LEYENDO
+    public static void llenarAlmacenPartesC() {
+
         listaPartesC.add(new APartesCoches("liquidoFrenos", 2, 5.75f));
-        listaPartesC.add(new APartesCoches("cinturones", 2, 4f));
-        listaPartesC.add(new APartesCoches("llantas", 2, 15f));
-        listaPartesC.add(new APartesCoches("neumaticos", 2, 17.5f));
-        listaPartesC.add(new APartesCoches("radios", 2, 23f));
-        listaPartesC.add(new APartesCoches("altavoces", 2, 30f));
+        listaPartesC.add(new APartesCoches("cinturones", 2, 5.75f));
+        listaPartesC.add(new APartesCoches("llantas", 2, 5.75f));
+        listaPartesC.add(new APartesCoches("neumaticos", 2, 5.75f));
+        listaPartesC.add(new APartesCoches("radios", 2, 5.75f));
+        listaPartesC.add(new APartesCoches("altavoces", 2, 5.75f));
+
+    }
+
+//escribir/actualizar fichero
+    public static void escribirFich() {
+
+        Escribir.fichPartesCoches(listaPartesC);
 
     }
 

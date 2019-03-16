@@ -18,7 +18,7 @@ public class Clientes {
 
     public static void llenarClientes() {
 
-        listaClientes.add(new Clientes("Rodolfo", "5555Y"));
+        listaClientes.add(new Clientes("Manuel", "5555Y"));
 
     }
 

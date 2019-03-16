@@ -16,6 +16,19 @@ public class Admins {
     //accedemos a los arrayList con static
     protected static ArrayList<Admins> listaAdmins = new ArrayList<Admins>();
 
+    public static void llenarAdmins() {
+
+        listaAdmins.add(new Admins("Rodolfo", "1990123"));
+        listaAdmins.add(new Admins("Jose", "1991123"));
+        listaAdmins.add(new Admins("Mari", "1992123"));
+
+    }
+
+    public Admins(String nombre, String password) {
+        this.nombre = nombre;
+        this.password = password;
+    }
+
     public String getNombre() {
         return nombre;
     }

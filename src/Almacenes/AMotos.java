@@ -1,5 +1,6 @@
 package Almacenes;
 
+import Escritura_Lectura.Escribir;
 import java.util.*;
 
 /**
@@ -27,7 +28,7 @@ public class AMotos {
         this.unidades = unidades;
     }
 
-    public void llenarAlmacenM() {
+    public static void llenarAlmacenM() {
 
         listaMotos.add(new AMotos("1234P", "Honda Forza 300", "Plata", 5000f, 2));
         listaMotos.add(new AMotos("6655O", "Honda X-ADV", "Blanco", 10000f, 2));
@@ -38,8 +39,14 @@ public class AMotos {
         listaMotos.add(new AMotos("5545L", "Triumph Bonneville", "Negro", 13000f, 2));
 
     }
+    
+    public static void escribirFich(){
+        
+        Escribir.fichMotos(listaMotos);
+        
+    }
 
-    public String getMatricula() {
+        public String getMatricula() {
         return matricula;
     }
 
